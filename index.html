@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jayden Pruitt · Banking Division Examiner Candidate · DBCF</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Newsreader:ital@0;1&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#000000;        /* black text */
+    --ink-2:#000000;      /* black text */
+    --paper:#FFFFFF;      /* white */
+    --paper-2:#F2F6FB;    /* faint navy-tinted white */
+    --rule:#C7D6E6;       /* navy hairline */
+    --seal:#000000;       /* black text */
+    --verify:#000000;     /* black text */
+    --muted:#000000;      /* black text */
+    --navy:#0F2A4A;       /* navy headers */
+    --max:1080px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"Newsreader",Georgia,serif;
+    font-size:18px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 28px}
+  .mono{font-family:"IBM Plex Mono",monospace;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase}
+
+  /* ---- Masthead ---- */
+  header.mast{
+    border-bottom:2px solid var(--ink);
+    padding:34px 0 22px;
+    background:
+      repeating-linear-gradient(90deg,transparent 0 6px,rgba(15,42,74,.025) 6px 7px);
+  }
+  .mast-row{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap}
+  .seal{
+    width:54px;height:54px;border-radius:50%;
+    border:1.5px solid var(--seal);
+    display:flex;align-items:center;justify-content:center;
+    font-family:"Fraunces",serif;font-weight:600;font-size:1.1rem;color:var(--seal);
+    flex-shrink:0;
+    box-shadow:inset 0 0 0 3px var(--paper),inset 0 0 0 4px rgba(27,74,122,.25);
+  }
+  .mast-id .mono{color:var(--muted);display:block;margin-bottom:4px}
+  .mast-id .file{font-family:"Fraunces",serif;font-size:1rem;font-weight:500}
+
+  /* ---- Hero ---- */
+  .hero{padding:64px 0 30px;border-bottom:1px solid var(--rule);text-align:center}
+  .hero .eyebrow{color:var(--seal);margin-bottom:22px}
+  .hero .lede{margin-left:auto;margin-right:auto}
+  .hero h1{
+    font-family:"Fraunces",serif;
+    font-weight:400;
+    font-size:clamp(2.6rem,6vw,4.6rem);
+    line-height:1.02;
+    letter-spacing:-.01em;
+    margin-bottom:26px;
+    color:var(--navy);
+  }
+  .hero h1 em{color:var(--ink-2)}
+  .hero .lede{font-size:1.28rem;max-width:60ch;color:var(--ink-2)}
+  .hero .lede .v{color:var(--verify);}
+
+  /* ---- Heartfelt note ---- */
+  .note{padding:56px 0;border-bottom:1px solid var(--rule);background:var(--paper-2)}
+  .note .label{color:var(--seal);margin-bottom:26px}
+  .note p{font-family:"Newsreader",Georgia,serif;font-size:1.32rem;line-height:1.62;max-width:64ch;color:var(--ink);margin-bottom:20px}
+  .note p:last-child{margin-bottom:0}
+  .note p em{color:var(--ink-2)}
+
+  /* ---- Section scaffold ---- */
+  section{padding:58px 0;border-bottom:1px solid var(--rule)}
+  .sec-head{display:flex;align-items:baseline;gap:18px;margin-bottom:34px}
+  .sec-head .num{font-family:"IBM Plex Mono",monospace;font-size:.8rem;color:var(--seal)}
+  .sec-head h2{font-family:"Fraunces",serif;font-weight:500;font-size:1.7rem;letter-spacing:-.01em;color:var(--navy)}
+
+  /* ---- Findings grid (verify vs implement) ---- */
+  .findings{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--ink)}
+  .finding{padding:26px 24px;border-right:1px solid var(--rule)}
+  .finding:last-child{border-right:none}
+  .finding h3{font-family:"IBM Plex Mono",monospace;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:14px}
+  .finding.imp h3{color:var(--muted)}
+  .finding.ver h3{color:var(--verify)}
+  .finding p{font-size:1.02rem;color:var(--ink-2)}
+  .finding .tag{display:inline-block;margin-top:14px;font-family:"IBM Plex Mono",monospace;font-size:.64rem;letter-spacing:.1em;text-transform:uppercase;padding:3px 8px;border:1px solid var(--rule);color:var(--muted)}
+
+  /* ---- Competency ledger ---- */
+  .ledger{width:100%;border-collapse:collapse}
+  .ledger tr{border-bottom:1px solid var(--rule)}
+  .ledger tr:last-child{border-bottom:none}
+  .ledger td{padding:18px 8px;vertical-align:top}
+  .ledger td:first-child{width:34%;font-family:"Fraunces",serif;font-weight:500;font-size:1.05rem}
+  .ledger td:last-child{color:var(--ink-2);font-size:1.02rem}
+  .ledger .domain{font-family:"IBM Plex Mono",monospace;font-size:.62rem;letter-spacing:.12em;color:var(--seal);display:block;margin-bottom:3px;text-transform:uppercase}
+
+  /* ---- Goals / certifications ---- */
+  .goals-intro{max-width:62ch;color:var(--ink-2);margin-bottom:30px;font-size:1.1rem}
+  .certs{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .cert{
+    border:1px solid var(--ink);
+    padding:24px 22px;
+    background:var(--paper-2);
+    position:relative;
+  }
+  .cert .horizon{position:absolute;top:18px;right:20px;font-family:"IBM Plex Mono",monospace;font-size:.6rem;letter-spacing:.12em;color:var(--seal)}
+  .cert h3{font-family:"Fraunces",serif;font-size:1.45rem;font-weight:600;margin-bottom:4px;color:var(--navy)}
+  .cert .full{font-size:.92rem;color:var(--muted);margin-bottom:14px}
+  .cert p{font-size:.98rem;color:var(--ink-2)}
+  .goals-note{margin-top:24px;font-size:.95rem;color:var(--muted);border-left:2px solid var(--seal);padding-left:16px}
+
+  /* ---- Prep grid ---- */
+  .prep{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--ink)}
+  .prep .item{padding:26px 22px;border-right:1px solid var(--rule)}
+  .prep .item:last-child{border-right:none}
+  .prep .item .pnum{font-family:"IBM Plex Mono",monospace;font-size:.66rem;letter-spacing:.12em;color:var(--seal);display:block;margin-bottom:12px}
+  .prep .item h3{font-family:"Fraunces",serif;font-weight:600;font-size:1.12rem;margin-bottom:10px;color:var(--navy)}
+  .prep .item p{font-size:.97rem;color:var(--ink-2)}
+
+  /* ---- Core values ---- */
+  .values{display:grid;grid-template-columns:repeat(2,1fr);gap:0;border:1px solid var(--ink)}
+  .value{padding:24px 22px;border-right:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+  .value:nth-child(2n){border-right:none}
+  .value:nth-last-child(-n+2){border-bottom:none}
+  .value h3{font-family:"Fraunces",serif;font-weight:600;font-size:1.18rem;margin-bottom:8px;color:var(--navy)}
+  .value .vlabel{font-family:"IBM Plex Mono",monospace;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--seal);display:block;margin-bottom:10px}
+  .value p{font-size:.98rem;color:var(--ink-2)}
+
+  /* ---- Roadmap ---- */
+  .roadmap{border-left:2px solid var(--ink);margin-left:6px}
+  .phase{position:relative;padding:0 0 34px 30px}
+  .phase:last-child{padding-bottom:0}
+  .phase::before{content:"";position:absolute;left:-7px;top:5px;width:12px;height:12px;border-radius:50%;background:var(--paper);border:2px solid var(--seal)}
+  .phase .when{font-family:"IBM Plex Mono",monospace;font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--seal);margin-bottom:5px}
+  .phase h3{font-family:"Fraunces",serif;font-weight:500;font-size:1.2rem;margin-bottom:8px;color:var(--navy)}
+  .phase p{font-size:1rem;color:var(--ink-2);max-width:60ch}
+
+  /* ---- Closing ---- */
+  .close{padding:64px 0}
+  .close blockquote{
+    font-family:"Fraunces",serif;
+    font-weight:400;
+    font-size:clamp(1.5rem,3.4vw,2.2rem);
+    line-height:1.25;
+    letter-spacing:-.01em;
+    max-width:24ch;
+    margin-bottom:30px;
+  }
+  .close blockquote em{color:var(--ink-2)}
+  .sign{font-family:"IBM Plex Mono",monospace;font-size:.74rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase}
+  .sign a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--rule)}
+  .sign a:hover{border-color:var(--ink)}
+  .signoff{font-family:"Fraunces",serif;font-weight:500;font-size:1.5rem;letter-spacing:-.01em;margin-bottom:8px}
+
+  footer{border-top:2px solid var(--ink);padding:26px 0;text-align:center}
+  footer .mono{color:var(--muted)}
+
+  /* ---- reveal ---- */
+  .reveal{opacity:0;transform:translateY(14px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+  @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+
+  @media(max-width:680px){
+    body{font-size:17px}
+    .findings{grid-template-columns:1fr}
+    .finding{border-right:none;border-bottom:1px solid var(--rule)}
+    .finding:last-child{border-bottom:none}
+    .certs{grid-template-columns:1fr}
+    .values{grid-template-columns:1fr}
+    .prep{grid-template-columns:1fr}
+    .prep .item{border-right:none;border-bottom:1px solid var(--rule)}
+    .prep .item:last-child{border-bottom:none}
+    .value{border-right:none}
+    .value:nth-last-child(-n+2){border-bottom:1px solid var(--rule)}
+    .value:last-child{border-bottom:none}
+    .ledger td:first-child{width:100%;display:block}
+    .ledger td{display:block;padding:14px 4px}
+    .ledger td:last-child{padding-top:0}
+  }
+  :focus-visible{outline:2px solid var(--seal);outline-offset:3px}
+</style>
+</head>
+<body>
+
+<header class="mast">
+  <div class="wrap mast-row">
+    <div style="display:flex;gap:16px;align-items:center">
+      <div class="seal">J</div>
+      <div class="mast-id">
+        <span class="mono">Department of Banking &amp; Consumer Finance</span>
+        <span class="file">Candidate File · Banking Division Examiner (Early Career)</span>
+      </div>
+    </div>
+    <div class="mono" style="color:var(--muted)">Follow-up &middot; Post-Interview</div>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap">
+    <h1 class="reveal">Thank You,<br>DBCF Team</h1>
+    <p class="lede reveal">I left the interview genuinely looking forward to the road ahead: earning my examiner credentials, learning from the crew, and stepping into the day-to-day of safeguarding the institutions the Division oversees. The informal tone made it easy to picture the fit, and it's a picture I want to <span class="v">verify, not just imagine.</span></p>
+  </div>
+</div>
+
+<div class="note">
+  <div class="wrap">
+    <div class="label mono reveal">A note of thanks</div>
+    <p class="reveal">I want to express my sincere appreciation for the opportunity to interview for the Banking Division Examiner position. I am grateful for your time and for the thoughtful, candid way you described the responsibilities and expectations of the role.</p>
+    <p class="reveal">The conversation was genuinely informative. It deepened my understanding of the Division's work, the team I would have the privilege of joining, and the standards an examiner is expected to uphold. That clarity is valuable to me as I begin this stage of my career.</p>
+    <p class="reveal">I came away with a strong and lasting interest in this position and in the prospect of contributing to the Department's mission. Thank you again for your consideration. I look forward to the opportunity to continue the conversation.</p>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>How I'm preparing for the work ahead</h2>
+    </div>
+    <p class="reveal" style="max-width:62ch;margin-bottom:30px;color:var(--ink-2);font-size:1.1rem">I've been thinking carefully about the day-to-day of an examiner, the meetings, the reports, the conversations with institution staff, and where I can sharpen my skills before stepping into the role. Three areas have my focus:</p>
+    <div class="prep reveal">
+      <div class="item">
+        <h3>Writing with clarity</h3>
+        <p>Findings only matter if they read cleanly. I'm working on writing precise, well-organized examination notes and reports, the kind that communicate a concern plainly and stand up to review.</p>
+      </div>
+      <div class="item">
+        <h3>Speaking with people</h3>
+        <p>Examinations run on conversations with management and staff. I'm practicing how to ask clear questions, listen carefully, and discuss sensitive findings with professionalism and tact.</p>
+      </div>
+      <div class="item">
+        <h3>Gathering the right information</h3>
+        <p>Strong meetings start with preparation. I'm building the habit of identifying what to request, what to review, and what to verify before an important discussion, so I walk in ready.</p>
+      </div>
+    </div>
+    <p class="reveal" style="margin-top:22px;color:var(--muted);font-size:.98rem">These are the skills I see at the core of effective examination work, and I'm committed to strengthening them from day one.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>Long-term goals &amp; certification path</h2>
+    </div>
+    <p class="goals-intro reveal">I see this position as the start of a credentialed examiner career, not a stop along the way. With the Division's support for training and certification, here's the trajectory I'd commit to:</p>
+    <div class="certs reveal">
+      <div class="cert">
+        <h3>Security+</h3>
+        <div class="full">CompTIA Security+</div>
+        <p>The industry-standard baseline credential. It validates the core security fundamentals every examiner should command and is a natural first step on the path.</p>
+      </div>
+      <div class="cert">
+        <h3>CISA</h3>
+        <div class="full">Certified Information Systems Auditor</div>
+        <p>The cornerstone credential for IT examination and audit. My top priority, it maps directly to the verify-and-assess work at the heart of this role.</p>
+      </div>
+      <div class="cert">
+        <h3>CISSP</h3>
+        <div class="full">Certified Information Systems Security Professional</div>
+        <p>To deepen the security-domain expertise behind every control I'd evaluate, broadening the technical lens I bring to examinations over time.</p>
+      </div>
+      <div class="cert">
+        <h3>CRISC</h3>
+        <div class="full">Certified in Risk &amp; Information Systems Control</div>
+        <p>A risk-focused credential that complements the examiner's mandate, sharpening how I assess and communicate IT and operational risk across institutions.</p>
+      </div>
+    </div>
+    <p class="goals-note reveal">From foundation to specialization, each of these is an investment I'd want to repay through sharper, more credible examination work for the Division.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>Aligned with how the Division works</h2>
+    </div>
+    <div class="values reveal">
+      <div class="value">
+        <span class="vlabel">Independence</span>
+        <h3>Objectivity over advocacy</h3>
+        <p>An examiner's value is impartial judgment. I'm drawn to the discipline of assessing institutions against the standard, not steering them, but holding the line on safety and soundness.</p>
+      </div>
+      <div class="value">
+        <span class="vlabel">Public trust</span>
+        <h3>Protecting depositors</h3>
+        <p>Behind every IT control is someone's money and data. The mission of safeguarding the institutions the public relies on is exactly the kind of work I want to do.</p>
+      </div>
+      <div class="value">
+        <span class="vlabel">Rigor</span>
+        <h3>Evidence, not assumption</h3>
+        <p>Good examination is documented and defensible. I'd rather verify a control with evidence than take a process on faith, the habit your team described resonated with me.</p>
+      </div>
+      <div class="value">
+        <span class="vlabel">Compliance</span>
+        <h3>Grounded in the GLBA</h3>
+        <p>The Gramm-Leach-Bliley Act sets the standard for how institutions protect customer information. I'm prepared to assess compliance with its Safeguards Rule, Financial Privacy Rule, and Pretexting Provisions as a core part of every examination.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>How I'd approach the first year</h2>
+    </div>
+    <div class="roadmap reveal">
+      <div class="phase">
+        <div class="when">First 90 days · Learn the standard</div>
+        <h3>Absorb the process</h3>
+        <p>Get fluent in the Division's examination workflow, the FFIEC IT Handbook in practice, and how URSIT ratings are reached. Shadow examinations, learn the Report of Examination format, and understand how findings move from fieldwork to write-up.</p>
+      </div>
+      <div class="phase">
+        <div class="when">Months 3–6 · Build the craft</div>
+        <h3>Contribute on exams</h3>
+        <p>Take ownership of assigned URSIT components under guidance, handle vendor and core-processor review areas, and begin pursuing the CISA so my credentials catch up to the work as quickly as possible.</p>
+      </div>
+      <div class="phase">
+        <div class="when">Months 6–12 · Add value</div>
+        <h3>Carry weight on the team</h3>
+        <p>Work examinations with growing independence, support joint exams with FDIC or Federal Reserve counterparts, and bring my technical background to bear where it sharpens the team's assessment of an institution's controls.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="close">
+  <div class="wrap">
+    <blockquote class="reveal">The conversation left me looking forward, to the team, the work, and what's ahead.</blockquote>
+    <p class="signoff reveal">Jayden M. Pruitt</p>
+    <p class="sign reveal"><a href="mailto:jaydenpruitt01@gmail.com">jaydenpruitt01@gmail.com</a> &nbsp;·&nbsp; <a href="tel:6012702721">(601)270-2721</a></p>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <span class="mono">Prepared as a follow-up to my interview · DBCF Banking Division Examiner</span>
+  </div>
+</footer>
+
+<script>
+  const io=new IntersectionObserver((es)=>{
+    es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})
+  },{threshold:.12});
+  document.querySelectorAll('.reveal').forEach((el,i)=>{
+    el.style.transitionDelay=(i%4*60)+'ms';
+    io.observe(el);
+  });
+</script>
+</body>
+</html>
